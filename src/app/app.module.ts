@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -62,6 +63,7 @@ import { MealCardComponent } from './components/product-details/meal-card/meal-c
     MatToolbarModule,
     MatPaginatorModule,
     MatIconModule,
+    MatCheckboxModule,
     MatInputModule,
     MatMenuModule,
     MatButtonModule,

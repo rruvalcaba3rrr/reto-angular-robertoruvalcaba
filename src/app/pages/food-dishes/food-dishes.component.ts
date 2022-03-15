@@ -98,8 +98,6 @@ export class FoodDishesComponent implements OnInit {
 
     try {
       var res = await this.apiService.findMealsByArea(area.value);
-      console.log(res);
-      
       this.dataSource = new MatTableDataSource(res);
       setTimeout(() => {
         this.dataSource.paginator = this.paginator;

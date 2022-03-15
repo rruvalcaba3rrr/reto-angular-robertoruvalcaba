@@ -13,7 +13,6 @@ export class MyProfileComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log(this.authService.getSession());
     this.userInfo = JSON.parse(this.authService.getSession());
   }
 
