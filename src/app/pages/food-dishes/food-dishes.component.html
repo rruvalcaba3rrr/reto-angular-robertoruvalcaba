@@ -1,0 +1,95 @@
+<div class="header-container">
+    <div>
+        <app-header></app-header>
+    </div>
+</div>
+<div class="component-main container">
+    <div class="header-container">
+        <h1 class="titles"> Platillos </h1>
+    </div>
+
+    <div class="categories">
+        <form>
+            <div class="row">
+                <div>
+                    <mat-form-field class="view-filter">
+                        <mat-label style="padding-left: 5px;">Filtrar por categoria</mat-label>
+                        <mat-select #select placeholder="Seleccione una opción"
+                            (selectionChange)="searchByCategory($event)" [(ngModel)]="categorySelected"
+                            [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let category of categories" [value]="category.strCategory ">
+                                {{ category.strCategory }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="view-filter">
+                        <mat-label style="padding-left: 5px;">Filtrar por area</mat-label>
+                        <mat-select #select placeholder="Seleccione una opción" (selectionChange)="searchByArea($event)"
+                            [(ngModel)]="areaSelected" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let area of areas" [value]="area.strArea">
+                                {{ area.strArea }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <mat-form-field appearance="standard">
+        <img src="assets/images/search.png" alt="" />
+        <input matInput (keyup)="applyFilter($event)" placeholder="Escribe para buscar" #input />
+    </mat-form-field>
+
+    <div class="table-container">
+        <div class="searching-text" *ngIf="searching">
+            <div class="loading">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="id" matSortDisableClear
+            matSortDirection="desc" *ngIf="!searching">
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>Id</th>
+                <td mat-cell *matCellDef="let element">{{ element.idMeal }}</td>
+
+            </ng-container>
+
+            <ng-container matColumnDef="image">
+                <th mat-header-cell *matHeaderCellDef>Imagen</th>
+                <td mat-cell *matCellDef="let element">
+                    <img [src]="element.strMealThumb" style="max-height: 80px;border-radius: 10px;margin: 10px 0;">
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let element">{{ element.strMeal }}</td>
+            </ng-container>
+
+
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Acción</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-button class="request" [routerLink]="['/meal-details/'+element.idMeal]">
+                        ver detalles
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="6">
+                    No hay datos para mostrar
+                </td>
+            </tr>
+        </table>
+    </div>
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+
+</div>

@@ -1,0 +1,19 @@
+<div class="header-container">
+    <div>
+        <app-header></app-header>
+    </div>
+</div>
+<div class="component-main container">
+    <div class="header-container">
+        <h1 class="titles"> My perfil </h1>
+    </div>
+    <mat-card>
+        <p><strong>Nombre:</strong> {{userInfo.name}}</p>
+        <p><strong>Username:</strong> {{userInfo.username}}</p>
+        <p><strong>Email:</strong> {{userInfo.email}}</p>
+        <p><strong>Teléfono:</strong> {{userInfo.phoenNumber}}</p>
+        <button (click)="logOut()" mat-raised-button>
+            Cerrar Sesión
+        </button>
+    </mat-card>
+</div>

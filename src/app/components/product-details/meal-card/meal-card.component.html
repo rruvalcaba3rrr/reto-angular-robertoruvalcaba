@@ -1,0 +1,25 @@
+<div class="card-main" *ngIf="meal">
+    <div class="image" [style.backgroundImage]="'url('+ meal.strMealThumb +')'">
+    </div>
+    <div class="body">
+        <div class="body-row left-row">
+            <div class="title-and-cat">
+                <div class="card-title">
+                    <a [routerLink]="['/meal-details/'+ meal.idMeal]">
+                        <h2>{{meal.strMeal | slice:0: 15}}...</h2>
+                    </a>
+                </div>
+                <div class="card-cat">
+                    <span>{{meal.strCategory}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="body-row right-row">
+            <ng-container>
+                <button [routerLink]="[ '/meal-details/'+ meal.idMeal]" mat-raised-button class="card-button">ver
+                    detalles</button>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+.component-main {
+    background-color: #fff !important;
+    padding: 50px 90px;
+
+    .card-tabs-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 5rem;
+        .card-list {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            padding-left: 4rem;
+            margin-bottom: 3rem;
+
+            .cards-container {
+                width: 30%;
+                margin-bottom: 20px;
+                box-shadow: 1px 11px 24px -10px rgb(184 132 38 / 33%);
+                -webkit-box-shadow: 1px 11px 24px -10px rgb(184 132 38 / 33%);
+                -moz-box-shadow: 1px 11px 24px -10px rgb(184 132 38 / 33%);
+            }
+        }
+
+        mat-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            box-shadow: none !important;
+            border-radius: 10px;
+            border: 1px solid #d9d9d9;
+            align-items: center;
+            padding: 35px 0;
+            margin-bottom: 25px;
+            min-width: calc(20% - 26px);
+            cursor: pointer;
+
+            img {
+                max-width: 100px;
+            }
+            mat-card-title {
+                font-size: 14px;
+                font-weight: bold;
+                margin-top: 5px !important;
+                text-align: center;
+                padding: 0 5px;
+            }
+        }
+    }
+}
+.cards {
+    flex-flow: unset !important;
+    overflow-x: auto;
+    justify-content: center;
+    padding: 0 10px !important;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &::-webkit-scrollbar-thumb {
+        background: #ffaf0f;
+        border-radius: 4px;
+    }
+
+    /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #ffaf0f;
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &::-webkit-scrollbar {
+        height: 8px;
+        /* width of vertical scrollbar */
+        border: 1px solid #d5d5d5;
+    }
+
+    &::-webkit-scrollbar-track-piece:end {
+        margin-right: 15px;
+    }
+
+    &::-webkit-scrollbar-track-piece:start {
+        margin-left: 15px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .component-main {
+        padding: 50px 90px;
+
+        .card-tabs-container {
+            justify-content: center;
+            mat-card {
+                min-width: calc(20% - 26px);
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+    .component-main {
+        .card-tabs-container {
+            mat-card {
+                padding: 35px 10px;
+                min-width: calc(25% - 52px) !important;
+            }
+        }
+    }
+}
+
+/* Extra small devices (phones, 700px and down) */
+@media only screen and (max-width: 700px) {
+    .component-main {
+        padding: 20px 30px !important;
+        .card-tabs-container {
+            mat-card {
+                width: calc(50% - 45px) !important;
+            }
+        }
+    }
+}
+
+::ng-deep .joyride-step__close {
+    display: none;
+}
+
+::ng-deep .joyride-step__container {
+    border-radius: 10px;
+}
+
+::ng-deep .mat-card {
+    border-radius: 10px;
+}
+
+::ng-deep .joyride-backdrop {
+    background-color: #094a9f44 !important;
+}

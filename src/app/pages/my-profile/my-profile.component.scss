@@ -1,0 +1,17 @@
+mat-card{
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    p{
+        font-size: 20px;
+    }
+    .mat-raised-button {
+        margin-top: 20px;
+        background-color: #d13d23;
+        color: white;
+        width: 306px;
+        height: 37px;
+    }
+}

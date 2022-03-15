@@ -1,0 +1,28 @@
+<section class="general-container">
+    <div class="row">
+        <div>
+            <p><strong>Nombre del platillo</strong></p>
+            <p>{{mealInformation?.strMeal}}</p>
+        </div>
+        <div>
+            <p><strong>Categoría</strong></p>
+            <p>{{mealInformation?.strMeal}}</p>
+        </div>
+        <div>
+            <p><strong>Tipo de cocina</strong></p>
+            <p>{{mealInformation?.strArea}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div>
+            <p><strong>Ingredientes</strong></p>
+            <ul>
+                <ng-container *ngFor="let item of ingredients;let i = index">
+                    <li *ngIf="mealInformation['strIngredient'+(i+1)] != ''">
+                        {{mealInformation['strIngredient'+(i+1)]}}</li>
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+</section>

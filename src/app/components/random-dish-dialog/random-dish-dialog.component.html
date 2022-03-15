@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-content>
+        <mat-card-title>
+            Platillo del dia
+            <hr>
+        </mat-card-title>
+        <div class="product-info">
+            <div class="column">
+                <div class="cover-image">
+                    <img [src]="data.dishInformation.strMealThumb" alt="Meal Thumb">
+                </div>
+                <div class="info">
+                    <mat-card>
+                        <p><strong>Nombre:</strong>{{data.dishInformation.strMeal}}</p>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button [routerLink]="['meal-details/'+ data.dishInformation.idMeal]" mat-dialog-close>ver
+            detalles</button>
+        <button mat-button mat-dialog-close class="close-btn">Cerrar</button>
+    </mat-card-actions>
+</mat-card>

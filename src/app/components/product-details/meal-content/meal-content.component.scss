@@ -1,0 +1,16 @@
+.general-container {
+    width: 100%;
+    position: sticky;
+    top: 5%;
+    right: 0;
+    margin-top: -200px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #c1c1c19c;
+    background: white;
+    @media screen and (max-width: 768px) {
+        position: initial;
+        margin-top: -10px;
+        width: auto;
+    }
+}

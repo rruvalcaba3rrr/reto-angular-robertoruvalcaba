@@ -1,0 +1,94 @@
+.component-main {
+    min-height: calc(100vh - 100px);
+    background-color: #fff !important;
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 100px);
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            img{
+                width: 150px;
+                max-width: 150px;
+            }
+        }
+
+        .inputs {
+            display: flex;
+            justify-content: center;
+
+            input {
+                margin-top: 20px;
+                width: 290px;
+                height: 35px;
+                border-radius: 5px;
+                border: 1px solid #707070;
+                letter-spacing: -0.65px;
+                opacity: 1;
+                font-size: 13px;
+                padding: 0 0 0 14px;
+            }
+
+            input:focus { 
+                outline: none !important;
+                border-color: #ffaf0f;
+                box-shadow: 0 0 10px #ffaf0f;
+             }
+        }
+    }
+}
+.error-box {
+    color: #555;
+    border-radius: 10px;
+    font-family: Tahoma, Geneva, Arial, sans-serif;
+    font-size: 11px;
+    padding: 10px 10px;
+    background: #ffecec;
+    border: 1px solid #f5aca6;
+    margin-bottom: 15px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 350px;
+    p {
+        margin: 0;
+        font-weight: bold;
+    }
+}
+
+.mat-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]) {
+    margin-top: 20px;
+    color: white;
+    width: 306px;
+    height: 37px;
+}
+
+.mat-raised-button {
+    margin-top: 20px;
+    background-color: #ffaf0f;
+    color: white;
+    width: 306px;
+    height: 37px;
+}
+
+@media screen and (max-width: 768px) {
+    * {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    .component-main {
+        padding-bottom: 0;
+        height: calc(100vh - 29px);
+        .login-form {
+            .img {
+                img {
+                    max-height: 220px;
+                }
+            }
+        }
+    }
+}

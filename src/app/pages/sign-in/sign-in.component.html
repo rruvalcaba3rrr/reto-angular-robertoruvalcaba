@@ -1,0 +1,23 @@
+<div class="component-main">
+
+    <form [formGroup]="signInForm" class="login-form" novalidate>
+        <div class="logo">
+            <img src="assets/images/salad.png" alt="" />
+        </div>
+
+        <div class="inputs">
+            <input type="email" #email placeholder="Username" formControlName="username" />
+        </div>
+        <div class="inputs">
+            <input type="password" #password placeholder="Contraseña" formControlName="password" />
+        </div>
+        <div *ngIf="error == true" class="error-box mt-2">
+            <p>{{ errorMessage }}</p>
+        </div>
+        <div class="inputs">
+            <button (click)="SignInRoutine()" mat-raised-button>
+                Iniciar Sesión
+            </button>
+        </div>
+    </form>
+</div>

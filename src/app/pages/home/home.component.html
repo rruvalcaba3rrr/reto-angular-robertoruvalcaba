@@ -1,0 +1,49 @@
+<div class="header-container">
+    <div>
+        <app-header></app-header>
+    </div>
+</div>
+<div class="component-main">
+
+    <div class="card-tabs-container">
+        <!-- popular-ingredients -->
+        <mat-card routerLink="/popular-ingredients" title="Ingredientes Populares"
+            text="Listado de ingredientes populares">
+            <div>
+                <img src="assets/images/ingredients.png" alt="Ingredientes Populares">
+            </div>
+            <mat-card-title>Ingredientes Populares</mat-card-title>
+        </mat-card>
+        <!-- food-dishes -->
+        <mat-card routerLink="/meals-list/null" title="Platillos" text="Listado de Platillos">
+            <div>
+                <img src="assets/images/dish.png" alt="Platillos">
+            </div>
+            <mat-card-title>Platillos</mat-card-title>
+        </mat-card>
+        <!-- popular-ingredients -->
+        <mat-card routerLink="/my-profile" title="Mi perfil" text="Mi perfil">
+            <div>
+                <img src="assets/images/profile.png" alt="Mi perfil">
+            </div>
+            <mat-card-title>Mi perfil</mat-card-title>
+        </mat-card>
+    </div>
+
+    
+    <ng-container *ngIf="searching;else mealsCarousel">
+        <div class="searching-text">
+            <div class="loading">
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </ng-container>
+    <ng-template #mealsCarousel>
+        <h1>Últimos platillos</h1>
+        <div class="cards horizontal-scroll-item">
+            <ng-container *ngFor="let item of carouselMeals">
+                <app-meal-card [meal]="item"></app-meal-card>
+            </ng-container>
+        </div>
+    </ng-template>
+</div>

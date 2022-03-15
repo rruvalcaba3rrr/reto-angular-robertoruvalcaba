@@ -1,0 +1,94 @@
+.card-main {
+    margin: 5px;
+    .image {
+        width: 100%;
+        width: 200px;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .body {
+        width: 100%;
+        padding: 15px 10px;
+
+        .body-row {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: center;
+            margin-bottom: 5px;
+
+            .title-and-cat {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+
+                .card-title {
+                    a {
+                        text-decoration: none;
+                    }
+                    h2 {
+                        font-size: 1.2em;
+                        color: #000;
+                        font-weight: 500;
+                        font-family: "Sofia Pro";
+                        margin: 0;
+                        line-height: 1.2;
+                    }
+                }
+
+                .card-cat {
+                    display: flex;
+                    flex-flow: row wrap;
+                    margin-top: 4px;
+                    span {
+                        font-size: 1em;
+                        color: #000;
+                        font-family: "Sofia Pro";
+                        margin: 0;
+                        font-weight: 400;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        display: block;
+                        text-overflow: ellipsis;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            h1 {
+                color: #000;
+                font-size: 1.9em;
+                font-family: "Sofia Pro";
+                font-weight: 900;
+                margin: 0;
+            }
+
+            button {
+                line-height: 30px;
+                padding: 0 14px;
+                height: 28px;
+                float: right;
+                border-radius: 15px;
+            }
+
+            .card-button {
+                background: #094a9f;
+                color: #fff;
+                font-size: 1em;
+                font-family: "Sofia Pro";
+            }
+
+            &.left-row {
+                justify-content: flex-start;
+            }
+
+            &.right-row {
+                justify-content: flex-end;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<div class="main-component">
+    <div class="header-container">
+        <div class="title-container">
+            <div>
+                <h1 class="titles" style="cursor: pointer;" routerLink="/home">Regresar</h1>
+                <mat-icon>keyboard_arrow_right</mat-icon>
+                <h1 class="titles text-grey">Detalles del platillo</h1>
+            </div>
+        </div>
+    </div>
+    <div class="component-main container">
+        <div class="desktop" *ngIf="!mobileViewActive">
+
+            <app-meal-banner [imageMeal]="mealInformation?.strMealThumb" [mealName]="mealInformation?.strMeal">
+            </app-meal-banner>
+            <div class="row">
+                <div class="column">
+                    <app-meal-video [mealVideo]="mealInformation?.strYoutube"></app-meal-video>
+                </div>
+                <div class="floating">
+                    <app-meal-content [mealInformation]="mealInformation"></app-meal-content>
+                </div>
+            </div>
+        </div>
+        <div class="mobile" *ngIf="mobileViewActive">
+            <app-meal-banner [imageMeal]="mealInformation?.strMealThumb" [mealName]="mealInformation?.strMeal">
+            </app-meal-banner>
+            <app-meal-content [mealInformation]="mealInformation"></app-meal-content>
+            <app-meal-video [mealVideo]="mealInformation?.strYoutube"></app-meal-video>
+        </div>
+    </div>
+</div>
